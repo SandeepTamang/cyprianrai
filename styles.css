@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.tile {
+  background-color: #fff;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+}
+
+/* Customizing puzzle appearance */
+.tile:nth-child(1) { background-image: url('tile1.jpg'); }
+.tile:nth-child(2) { background-image: url('tile2.jpg'); }
+.tile:nth-child(3) { background-image: url('tile3.jpg'); }
+.tile:nth-child(4) { background-image: url('tile4.jpg'); }
+.tile:nth-child(5) { background-image: url('tile5.jpg'); }
+.tile:nth-child(6) { background-image: url('tile6.jpg'); }
+.tile:nth-child(7) { background-image: url('tile7.jpg'); }
+.tile:nth-child(8) { background-image: url('tile8.jpg'); }
+.tile:nth-child(9) { background-image: none; } /* Empty tile */
+
+/* Hide background image on the last tile */
+.tile:nth-child(9) {
+  background-color: transparent;
+  border: none;
+}
+
+/* Adjust background position for puzzle image */
+.tile {
+  background-size: 300px 300px; /* Size of the puzzle image */
+}
+
+.header {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
