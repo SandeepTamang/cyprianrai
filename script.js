@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const puzzleContainer = document.getElementById('puzzle-container');
   const tiles = [];
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, ''];
+  let startTime, endTime;
 
   // Shuffle the numbers
   numbers.sort(() => Math.random() - 0.5);
@@ -29,7 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (isSolved()) {
-        alert('Congratulations! Puzzle solved!');
+        endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000; // Time taken in seconds
+        alert(`Congratulations! Puzzle solved!\nTime taken: ${timeTaken} seconds`);
       }
     });
   });
@@ -48,4 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     return true;
   }
+
+  // Start the timer when the first tile is clicked
+  tiles[0].addEventListener('click', function() {
+    startTime = new Date();
+  });
 });
