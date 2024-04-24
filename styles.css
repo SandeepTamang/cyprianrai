@@ -1,9 +1,14 @@
-body {
+.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+}
+
+.header {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .puzzle-container {
@@ -49,11 +54,4 @@ body {
 /* Adjust background position for puzzle image */
 .tile {
   background-size: 300px 300px; /* Size of the puzzle image */
-}
-
-.header {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
 }
